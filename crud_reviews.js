@@ -15,8 +15,7 @@ printjson(create);
 
 // Read
 
-const Read = db.Reviews.find({ reviewer: "Bob" });
-printjson(Read);
+db.Reviews.find({ reviewer: "Bob" }).forEach(printjson);
 
 
 
