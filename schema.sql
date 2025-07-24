@@ -1,6 +1,8 @@
-CREATE DATABASE IF NOT EXISTS bookbazaar
+CREATE DATABASE IF NOT EXISTS bookbazaar DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 USE bookbazaar;
+CREATE USER 'bookadmin'@'localhost' IDENTIFIED BY '2468#';
+GRANT ALL PRIVILEGES ON bookbazaar.* TO 'bookadmin'@'localhost';
 
 CREATE TABLE authors (
     author_id INT PRIMARY KEY AUTO_INCREMENT,
