@@ -33,7 +33,7 @@ CREATE TABLE books (
     publication_date DATE,
     price DECIMAL(10,2),
     stock_quantity INT DEFAULT 0,
-    FOREIGN KEY (author_id) REFERENCES authors(author_id) ON DELETE CASCADE
+    FOREIGN KEY (author_id) REFERENCES authors(author_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE user_books (
@@ -41,8 +41,8 @@ CREATE TABLE user_books (
     book_id INT NOT NULL,
     date_added DATE NOT NULL,
     PRIMARY KEY (user_id, book_id),
-    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
-    FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- Inserts are AI generated because I couldn't think of them on my own - Ziyad
